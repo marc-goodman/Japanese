@@ -11,6 +11,9 @@
 #targets {
   display: inline;
 }
+#timer {
+  font-size: 24pt;
+}
 .letter {
   line-height: 45px;
 }

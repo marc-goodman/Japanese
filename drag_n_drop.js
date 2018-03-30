@@ -2,9 +2,39 @@ $(
   function() {
     var rows = [];
     var tiles = [];
+    var start = 0;
+    var timer = 0;
+    var hits = 0;
+    var misses = 0;
+    var total = 0;
+    
+    function updateDisplay() {
+      var now = new Date().getTime();
+      var elapsed = Math.floor((now - start) / 1000);
+      var m = Math.floor(elapsed / 60);
+      var s = (elapsed % 60).toString();
+      if (s.length < 2)
+        s = '0' + s;
+      $('#timer').text('Elapsed Time: ' + m + ':' + s + ', ' + hits + '/' + total + ' Correct, ' + misses + ' Mistakes');
+    }
+    
+    function startTimer() {
+      if (timer)
+        return;
+      start = new Date().getTime();
+      updateDisplay();
+      timer = setInterval(updateDisplay, 1000);
+    }
+    
+    function success() {
+      updateDisplay();
+      clearInterval(timer);
+    }
+    
     for (var i = 0; i < 5; i++) {
       rows[i] = $('<div></div>');
     }
+    
     letters.forEach(function (l, index) {
       if (l.letter == 'skip') {
         var tile = null;
@@ -19,6 +49,7 @@ $(
         tiles.push(tile);
       }
     });
+    total = tiles.length;
     rows.forEach(function (r) { $('#targets').append(r); });
     for (var i = 0; i < 5; i++) {
       rows[i] = $('<div></div>');
@@ -34,7 +65,13 @@ $(
     });
     $('.tile').draggable({
       revert: function(target) {
-        if (!target || this.data('char') != target.data('char')) return true;
+        if (!target)
+          return true;
+        if (this.data('char') != target.data('char')) {
+          misses++;
+          return true;
+        }
+        hits++;
         var spos = this.position();
         var tpos = target.position();
         this.position({
@@ -42,6 +79,8 @@ $(
           at: "top left",
           of: target
         }, 'slow');
+        if (hits == total)
+          success();
         return false;
       },
       revertDuration: 100,
@@ -57,5 +96,6 @@ $(
         "ui-droppable-hover": "droppable_hover"
       }
     });
+    startTimer();
   }
 )
