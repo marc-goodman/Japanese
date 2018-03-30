@@ -15,6 +15,9 @@
       #targets {
         display: inline;
       }
+      .letter {
+        line-height: 45px;
+      }
       .tile {
         width: 45px;
         height: 45px;
@@ -71,8 +74,8 @@
               var tile = null;
               var target = $('<div class="skip">&nbsp;</div>');
             } else {
-              var tile = $('<div class="tile" data-char="' + l.letter + '">' + l.code + '</div>');
-              var target = $('<div class="target" data-char="' + l.letter + '">' + l.letter + '</div>');
+              var tile = $('<div class="tile" data-char="' + l.letter + '"><span class="letter">' + l.code + '</span></div>');
+              var target = $('<div class="target" data-char="' + l.letter + '"><span class="letter">' + l.letter + '</span></div>');
             }
             rows[index % 5].append(target);
             if (tile) {
