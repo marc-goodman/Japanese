@@ -1,129 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Drag and Drop Katakana</title>
-    <style>
-      #target_container {
-        width: 100%;
-        text-align: center;
-        background-color: LightBlue;
-      }
-      #tile_container {
-        width: 100%;
-        text-align: center;
-      }
-      #targets {
-        display: inline;
-      }
-      .letter {
-        line-height: 45px;
-      }
-      .tile {
-        width: 45px;
-        height: 45px;
-        font-size: 24pt;
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid black;
-        background-color: white;
-        cursor: pointer;
-        margin: 5px;
-        z-index: 10;
-        display: inline-block;
-      }
-      .target {
-        width: 45px;
-        height: 45px;
-        font-size: 20pt;
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid black;
-        background-color: white;
-        margin: 5px;
-        z-index: 0;
-        display: inline-block;
-      }
-      .droppable_hover {
-        background-color: LightYellow;
-      }
-      .skip {
-        width: 45px;
-        height: 45px;
-        margin: 5px;
-        text-align: center;
-        vertical-align: middle;
-        z-index: 0;
-        border: 1px solid rgba(0, 0, 0, 0);
-        display: inline-block;
-      }
-    </style>
+    <title>Drag and Drop Hiragana</title>
+    <link rel="stylesheet" href="drag_n_drop.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="hiragana_letters.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-    <script>
-      $(
-        function() {
-          var rows = [];
-          var tiles = [];
-          for (var i = 0; i < 5; i++) {
-            rows[i] = $('<div></div>');
-          }
-          letters.forEach(function (l, index) {
-            if (l.letter == 'skip') {
-              var tile = null;
-              var target = $('<div class="skip">&nbsp;</div>');
-            } else {
-              var tile = $('<div class="tile" data-char="' + l.letter + '"><span class="letter">' + l.code + '</span></div>');
-              var target = $('<div class="target" data-char="' + l.letter + '"><span class="letter">' + l.letter + '</span></div>');
-            }
-            rows[index % 5].append(target);
-            if (tile) {
-              tile.data('order', Math.random());
-              tiles.push(tile);
-            }
-          });
-          rows.forEach(function (r) { $('#targets').append(r); });
-          for (var i = 0; i < 5; i++) {
-            rows[i] = $('<div></div>');
-            $('#tiles').append(rows[i]);
-          }
-          tiles.sort(function(a, b) {
-            var v1 = a.data('order'), v2 = b.data('order');
-            if (v1 < v2) return -1;
-            if (v1 > v2) return 1;
-            return 0;
-          }).forEach(function (tile, index) {
-            rows[index >> 4].append(tile);
-          });
-          $('.tile').draggable({
-            revert: function(target) {
-              if (!target || this.data('char') != target.data('char')) return true;
-              var spos = this.position();
-              var tpos = target.position();
-              this.position({
-                my: "top left",
-                at: "top left",
-                of: target
-              }, 'slow');
-              return false;
-            },
-            revertDuration: 100,
-            start: function() {
-              $(this).css('z-index', 20);
-            },
-            stop: function() {
-              $(this).css('z-index', 10);
-            }
-          });
-          $('.target').droppable({
-            classes: {
-              "ui-droppable-hover": "droppable_hover"
-            }
-          });
-        }
-      )
-    </script>
+    <script src="drag_n_drop.js"></script>
   </head>
   <body>
     <div id="target_container">
