@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'CatCafe';
+    src: url('CatCafe.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sanafon';
+    src: url('SanafonYu.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Shigoto';
+    src: url('ShigotoMemogaki-Regular-1-01.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HakusyuKaisho';
+    src: url('hkgokukaikk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pomeranian';
+    src: url('Pomeranian-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSerif';
+    src: url('SourceHanSerif-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.9em;
+}
