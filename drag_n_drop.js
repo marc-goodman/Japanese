@@ -7,6 +7,16 @@ $(
     var hits = 0;
     var misses = 0;
     var total = 0;
+    var fonts = [
+      { name: "Arial", family: "Arial"},
+      { name: "Cat Cafe", family: "CatCafe" },
+      { name: "Pomeranian", family: "Pomeranian" },
+      { name: "Shigoto Memogaki", family: "Shigoto" },
+      { name: "Sanafon Yu", family: "Sanafon" },
+      { name: "Hakusyu Kaisyo", family: "HakusyuKaisyo" },
+      { name: "Han Serif", family: "SourceHanSerif" },
+      { name: "Random Mixed", family: "Random"}
+    ];
     
     function updateDisplay() {
       var now = new Date().getTime();
@@ -29,6 +39,24 @@ $(
     function success() {
       updateDisplay();
       clearInterval(timer);
+    }
+    
+    function makeFontSelections() {
+      var select = $('#fonts');
+      fonts.forEach(function(font) {
+        select.append($('<option value="' + font.family + '">' + font.name + '</option>'));
+      });
+      select.change(function() {
+        var family = select.val();
+        
+        if (family == 'Random') {
+          $('.tile').each(function() {
+            $(this).css('font-family', fonts[Math.floor( (fonts.length - 1) * Math.random() )].family);
+          });
+        } else {
+          $('.tile').css('font-family', select.val());
+        }
+      });
     }
     
     for (var i = 0; i < 5; i++) {
@@ -96,6 +124,7 @@ $(
         "ui-droppable-hover": "droppable_hover"
       }
     });
+    makeFontSelections();
     startTimer();
   }
 )
