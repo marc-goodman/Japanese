@@ -14,14 +14,14 @@
 
 @font-face {
     font-family: 'Shigoto';
-    src: url('ShigotoMemogaki-Regular-1-01.ttf') format('truetype');
+    src: url('ShigotoMemogaki.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'HakusyuKaisho';
-    src: url('hkgokukaikk.ttf') format('truetype');
+    src: url('HakusyuKaisyoExtraBold_kk.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
