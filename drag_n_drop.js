@@ -15,6 +15,8 @@ $(
       { name: "Sanafon Yu", family: "Sanafon" },
       { name: "Hakusyu Kaisyo", family: "HakusyuKaisyo" },
       { name: "Han Serif", family: "SourceHanSerif" },
+      { name: "Rii Pop", family: "RiiPop"},
+      { name: "Eri Ji", family: "EriJi"},
       { name: "Random Mixed", family: "Random"}
     ];
     

@@ -27,8 +27,22 @@
 }
 
 @font-face {
+    font-family: 'RiiPop';
+    src: url('RiiPopkkR.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Pomeranian';
     src: url('Pomeranian-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EriJi';
+    src: url('ERIJI.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
