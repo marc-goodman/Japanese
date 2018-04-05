@@ -17,6 +17,8 @@ $(
       { name: "Han Serif", family: "SourceHanSerif" },
       { name: "Rii Pop", family: "RiiPop"},
       { name: "Eri Ji", family: "EriJi"},
+      { name: "Kanazawa Honmaru", family: "KanazawaHonmaru"},
+      { name: "Bokosuka Monster", family: "BokosukaMonster"},
       { name: "Random Mixed", family: "Random"}
     ];
     

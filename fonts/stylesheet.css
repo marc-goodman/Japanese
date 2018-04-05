@@ -27,6 +27,20 @@
 }
 
 @font-face {
+    font-family: 'KanazawaHonmaru';
+    src: url('KanazawaHonmaruGothicMini.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BokosukaMonster';
+    src: url('BokosukaMonster.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'RiiPop';
     src: url('RiiPopkkR.otf') format('truetype');
     font-weight: normal;
