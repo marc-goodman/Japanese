@@ -41,8 +41,29 @@
 }
 
 @font-face {
+    font-family: 'HarenosoraMincho';
+    src: url('HarenosoraMincho.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ACGyosyo';
+    src: url('acgyosyo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KizunaDrops';
+    src: url('KizunaDrops.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'RiiPop';
-    src: url('RiiPopkkR.otf') format('truetype');
+    src: url('RiiPopkaku-R.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -63,7 +84,7 @@
 
 @font-face {
     font-family: 'SourceHanSerif';
-    src: url('SourceHanSerif-Medium.otf') format('truetype');
+    src: url('SourceHanSerif-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-size: 0.9em;

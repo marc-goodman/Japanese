@@ -19,6 +19,9 @@ $(
       { name: "Eri Ji", family: "EriJi"},
       { name: "Kanazawa Honmaru", family: "KanazawaHonmaru"},
       { name: "Bokosuka Monster", family: "BokosukaMonster"},
+      { name: "Kizuna Drops", family: "KizunaDrops"},
+      { name: "Harenosora Mincho", family: "HarenosoraMincho"},
+      { name: "AC Gyosyo", family: "ACGyosyo"},
       { name: "Random Mixed", family: "Random"}
     ];
     
